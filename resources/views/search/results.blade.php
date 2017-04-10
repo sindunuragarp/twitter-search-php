@@ -33,11 +33,9 @@
 
                     <hr/> <!-- ------------------------------------------------------------------------------------- -->
 
-                    <div class="res has-text-left">
+                    <div class="has-text-left">
                         @foreach ($data["results"] as $key => $row)
-                            <div class="pub-content">
-                                {!! $row["embed"]->html !!}
-                            </div>
+                            {!! $row["embed"]->html !!}
                         @endforeach
                     </div>
 
