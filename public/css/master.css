@@ -1,0 +1,72 @@
+/* Main */
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.mb-small {
+    margin-bottom: 10px;
+}
+
+.mb-medium {
+    margin-bottom: 30px;
+}
+
+.mb-large {
+    margin-bottom: 50px;
+}
+
+/* Search Pane */
+
+.main-title {
+    font-size: 45px;
+}
+
+.sub {
+    font-size: 18px;
+    font-style: italic;
+    color:black;
+}
+
+/* Search Results */
+
+.res {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.res .pub-content {
+    margin-top: 20px;
+    padding-bottom: 3px;
+}
+
+.res .pub-title {
+    font-size: 20px;
+    color:black;
+    padding-bottom: inherit;
+}
+
+.res .pub-link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:gray;
+    font-style: italic;
+    padding-bottom: inherit;
+}
+
+.res .pub-text {
+    font-size: 16px;
+    padding-bottom: inherit;
+}
+
+.res .pub-link a {
+    color: #2a88bd;
+}
+
+.res .pub-link a:visited {
+    color: #1f648b;
+}

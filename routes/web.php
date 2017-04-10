@@ -12,4 +12,4 @@
 */
 
 Route::get('', 'SearchController@index');
-Route::post('search', 'SearchController@search');
+Route::match(['get','post'],'search', 'SearchController@search');

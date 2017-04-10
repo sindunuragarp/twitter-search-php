@@ -9,13 +9,13 @@
                 <div class="column"></div>
                 <div class="column is-5">
 
-                    <div class="title mb-medium">
-                        Twitter URL Search
-                    </div>
+                    <a href=".">
+                        <div class="title mb-medium">
+                            Twitter URL Search
+                        </div>
+                    </a>
 
-                    <form class="query" method="POST" action="search">
-                        {{ csrf_field() }}
-
+                    <form class="query" method="GET" action="search">
                         <div class="field is-grouped">
                             <p class="control is-expanded">
                                 <input class="input is-medium" type="text" name="query" placeholder="Enter a URL ..." required>
