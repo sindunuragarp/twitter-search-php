@@ -20,20 +20,26 @@ class SearchController
         $twitter = resolve('App\TwitterConnector');
         $url = request()->input("query");
 
-        $query = "url:" . urldecode($url);
+        $query = "url:" . urldecode($url) . " -filter:retweets";
         $statuses = $twitter->search($query);
 
         $results = array();
         foreach ($statuses->statuses as $status) {
             $userId = $status->user->id;
+            $userName = $status->user->screen_name;
             $statusId = $status->id;
+
             $statusUrl = "https://www.twitter.com/" . $userId . "/status/" . $statusId;
+            $userUrl = "https://www.twitter.com/" . $userName;
 
             $tweet = [
                 "userId" => $userId,
-                "url" => $statusUrl,
+                "userName" => $userName,
+                "userUrl" => $userUrl,
+                "statusUrl" => $statusUrl,
                 "text" => $status->text,
-                "embed" => $twitter->getEmbed($statusUrl)
+                "date" => $status->created_at,
+                "urls" => $status->entities->urls,
             ];
 
             array_push($results, $tweet);
@@ -43,8 +49,7 @@ class SearchController
             "query" => $url,
             "results" => $results,
             "time" => $statuses->search_metadata->completed_in,
-            "next_link" => $statuses->search_metadata->next_results,
-            "current_link" => $statuses->search_metadata->refresh_url,
+            "raw" => $statuses
         ];
 
         //dd($data);

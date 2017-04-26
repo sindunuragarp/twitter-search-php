@@ -33,9 +33,19 @@
 
                     <hr/> <!-- ------------------------------------------------------------------------------------- -->
 
-                    <div class="has-text-left">
+                    <div class="has-text-center">
                         @foreach ($data["results"] as $key => $row)
-                            {!! $row["embed"]->html !!}
+                            <div>
+                                <blockquote class="twitter-tweet has-text-left" >
+                                    <p>{{ $row["text"] }}</p>
+                                    --- <a href = "{{ $row["statusUrl"] }}">{{ $row["userName"] }}</a> ({{ $row["date"] }})
+
+                                    <hr/>
+                                    @foreach ($row["urls"] as $url)
+                                        <div><a href = {{ $url->expanded_url }}>{{ $url->expanded_url }}</a></div>
+                                    @endforeach
+                                </blockquote>
+                            </div>
                         @endforeach
                     </div>
 
